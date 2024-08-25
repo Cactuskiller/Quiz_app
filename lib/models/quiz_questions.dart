@@ -1,9 +1,10 @@
 class QuizQuestions {
   const QuizQuestions(this.text, this.answers);
 
-  final String text;
-  final List<String> answers;
+  final String text; // questions
+  final List<String> answers; //answers
 
+  //a function to shuffle the answers and return a list
   List<String> getShuffledAnswers() {
     final shuffledList = List.of(
         answers); //the of constructer makes sure to create a copy of the list

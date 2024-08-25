@@ -6,7 +6,9 @@ import 'package:quiz_app/answer_button.dart';
 import 'package:quiz_app/data/questions.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key});
+  const QuestionsScreen({super.key, required this.onSelectAnswer});
+
+  final void Function(String answer) onSelectAnswer;
 
   @override
   State<QuestionsScreen> createState() {
@@ -17,7 +19,9 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
 
-  void answerQuestion() {
+//the function that is excuted when the the asnwer button is being pressed
+  void answerQuestion(String selectedAnswer) {
+    widget.onSelectAnswer(selectedAnswer);
     setState(() {
       currentQuestionIndex++;
     });
@@ -26,7 +30,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(context) {
     final currentQuestion = questions[
-        currentQuestionIndex]; //holding the current question in the list
+        currentQuestionIndex]; //when the value is incremented the question is switched
     return SizedBox(
       //another way of centering the content using sizedbox
       width: double.infinity, //means take as much width needed
@@ -50,9 +54,11 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             //the three dots called Spread Operator
             ...currentQuestion.getShuffledAnswers().map((answer) {
               return AnswerButton(
-                //returns a widget
+                //returns a widget for each answer
                 answerText: answer,
-                onTap: answerQuestion,
+                onTap: () {
+                  answerQuestion(answer);
+                },
               );
             }),
           ],
@@ -70,6 +76,6 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
 
 //Spread Operator (...): Since map returns an Iterable of widgets, you need to use the spread operator (...) to unpack (or "spread") these widgets into the list expected by the Column widget. This allows each AnswerButton to be inserted into the Column as separate widgets.
 
-//NOTE : the reason why we are using the following approch it's because we want to be able to generate dynamic answer widget insted of hard coding it , and the idea of making it dynamic is crucial since most of the time we're working with dynamic amount of data 
+//NOTE : the reason why we are using the following approch it's because we want to be able to generate dynamic answer widget insted of hard coding it , and the idea of making it dynamic is crucial since most of the time we're working with dynamic amount of data
 
-//the getShuffledAnswrs() is a method used to make a copy of a list and then shuffled it(change the order) and the reason why we're implmenting it on a copy because shuffle chnage the original list while map does not 
+//the getShuffledAnswrs() is a method used to make a copy of a list and then shuffled it(change the order) and the reason why we're implmenting it on a copy because shuffle chnage the original list while map does not

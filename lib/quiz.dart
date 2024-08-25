@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/questions_screen.dart';
 import 'package:quiz_app/start_screen.dart';
+import 'package:quiz_app/data/questions.dart';
 
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
@@ -30,10 +31,28 @@ class _QuizState extends State<Quiz> {
   //there is anothere approch were we can left the state up  where we can use ternary operators to control it
   var activeScreen = "start_screen";
 
+  List<String> selectAnswers =
+      []; //a list to stor the values choosen by the user
+
   void switchScreen() {
     setState(() {
       activeScreen = "questions_screen";
     });
+  }
+
+  //a function to handel adding the answers choosen by the user
+  void chooseAnswer(String answer) {
+    selectAnswers.add(answer);
+
+    //the folloeing funcion is used to switch the screen when all the amsers has been answered , also to avoid the error in the end
+
+    if (selectAnswers.length == questions.length) {
+      setState(() {
+        selectAnswers =
+            []; //reseting the list to fix the error that may show when we run the app a second time
+        activeScreen = 'start_screen';
+      });
+    }
   }
 
 //setState is a method in Flutter used to trigger a rebuild of the widget tree. When called, it tells Flutter to rerun the build method of the widget, reflecting any changes to the UI.
@@ -42,7 +61,7 @@ class _QuizState extends State<Quiz> {
     Widget screenWidget = StartScreen(switchScreen); //seting the initial widget
 
     if (activeScreen == 'questions_screen') {
-      screenWidget = const QuestionsScreen();
+      screenWidget = QuestionsScreen(onSelectAnswer: chooseAnswer);
     }
 
     return MaterialApp(
