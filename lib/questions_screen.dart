@@ -52,7 +52,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
 
             const SizedBox(height: 30),
             //the three dots called Spread Operator
-            ...currentQuestion.getShuffledAnswers().map((answer) {
+            ...currentQuestion.shuffledAnswers.map((answer) {
               return AnswerButton(
                 //returns a widget for each answer
                 answerText: answer,

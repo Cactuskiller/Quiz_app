@@ -5,7 +5,7 @@ class QuizQuestions {
   final List<String> answers; //answers
 
   //a function to shuffle the answers and return a list
-  List<String> getShuffledAnswers() {
+  List<String> get shuffledAnswers {
     final shuffledList = List.of(
         answers); //the of constructer makes sure to create a copy of the list
     shuffledList

@@ -49,14 +49,21 @@ class _QuizState extends State<Quiz> {
 
     if (selectAnswers.length == questions.length) {
       setState(() {
-        // selectAnswers =
-        //     []; //reseting the list to fix the error that may show when we run the app a second time
         activeScreen = 'results_screen';
       });
     }
   }
 
 //setState is a method in Flutter used to trigger a rebuild of the widget tree. When called, it tells Flutter to rerun the build method of the widget, reflecting any changes to the UI.
+
+  void restartQuiz() {
+    setState(() {
+      selectAnswers =
+          []; //reseting the list to fix the error that may show when we run the app a second time
+      activeScreen = 'questions_screen';
+    });
+  }
+
   @override
   Widget build(context) {
     Widget screenWidget = StartScreen(switchScreen); //seting the initial widget
@@ -68,6 +75,8 @@ class _QuizState extends State<Quiz> {
     if (activeScreen == "results_screen") {
       screenWidget = ResultsScreen(
         chosenAnswers: selectAnswers,
+        onRestart:
+            restartQuiz, //this function is passed to the results screen to be uesd by the restart button when it's pressed to go back to the questions screen
       );
     }
 
