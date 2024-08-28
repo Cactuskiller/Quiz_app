@@ -41,9 +41,9 @@ class ResultsScreen extends StatelessWidget {
     //the reseon why we added length in the end , cuz we want to store a number not a list
 
     //an example of using arrow functions you still can use () {} function so it's optional
-    final numCorrectQuestions = summeryData.where((data) => 
-       data['user_answer'] == data['correct_answers']
-    ).length;
+    final numCorrectQuestions = summeryData
+        .where((data) => data['user_answer'] == data['correct_answers'])
+        .length;
 
     return SizedBox(
       width: double.infinity,

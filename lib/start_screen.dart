@@ -5,7 +5,8 @@ class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz, {super.key}); //constructer
 //we rapped the text widget with the center to make the Start screen widget occupies as much space as posssible
 
-  final void Function() startQuiz; //passing the switchScreen function as an argument so the startScreen widget nows the state of the content so then we can pass it to the button
+  final void Function()
+      startQuiz; //passing the switchScreen function as an argument so the startScreen widget nows the state of the content so then we can pass it to the button
 
   @override
   Widget build(context) {
@@ -32,10 +33,10 @@ class StartScreen extends StatelessWidget {
             //sizebox is used to add spcsing between the widgets
             height: 80,
           ),
-           Text(
+          Text(
             'Learn Flutter the fun way!',
             style: GoogleFonts.lato(
-              color:const Color.fromARGB(255, 237, 223, 252),
+              color: const Color.fromARGB(255, 237, 223, 252),
               fontSize: 24,
               fontWeight: FontWeight.normal,
             ),
