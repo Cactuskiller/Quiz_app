@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/questions_screen.dart';
 import 'package:quiz_app/start_screen.dart';
 import 'package:quiz_app/data/questions.dart';
+import 'package:quiz_app/results_screen.dart';
 
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
@@ -32,7 +33,7 @@ class _QuizState extends State<Quiz> {
   var activeScreen = "start_screen";
 
   List<String> selectAnswers =
-      []; //a list to stor the values choosen by the user
+      []; //a list to stor the values chosen by the user
 
   void switchScreen() {
     setState(() {
@@ -48,9 +49,9 @@ class _QuizState extends State<Quiz> {
 
     if (selectAnswers.length == questions.length) {
       setState(() {
-        selectAnswers =
-            []; //reseting the list to fix the error that may show when we run the app a second time
-        activeScreen = 'start_screen';
+        // selectAnswers =
+        //     []; //reseting the list to fix the error that may show when we run the app a second time
+        activeScreen = 'results_screen';
       });
     }
   }
@@ -62,6 +63,12 @@ class _QuizState extends State<Quiz> {
 
     if (activeScreen == 'questions_screen') {
       screenWidget = QuestionsScreen(onSelectAnswer: chooseAnswer);
+    }
+    //setting the screen to results screen after finishing all the questions
+    if (activeScreen == "results_screen") {
+      screenWidget = ResultsScreen(
+        chosenAnswers: selectAnswers,
+      );
     }
 
     return MaterialApp(
