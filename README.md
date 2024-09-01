@@ -36,7 +36,6 @@ The Quiz App is an interactive mobile application built using Flutter and Dart. 
 ##### │   │   └──> questions.dart         # Data source for questions and answers
 ##### |   ├──> models/
 ##### │   │   └──> quiz_questions.dart
-##### |   ├──> results screen.dart 
 ##### │   ├──> questions_summary/
 ##### │   │   ├──> questions_summary.dart # Custom widget for summarizing question results
 ##### │   │   ├──> question_identifier.dart # Custom widget for displaying the question index in the 
