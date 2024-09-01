@@ -56,9 +56,41 @@ The Quiz App is an interactive mobile application built using Flutter and Dart. 
 ``` flutter run```
 ## Code Explanation
 
+#### main.dart 
+This file serves as the entry point for the Flutter app. It initializes the app using MaterialApp as the root widget and manages the overall navigation between different screens like the start screen, questions screen, and results screen.
 
+#### quiz.dart
+quiz.dart contains the main Quiz widget, a stateful widget responsible for managing the quiz flow. It switches between screens based on user interactions, such as starting the quiz, selecting answers, and displaying results.
 
+#### answer_button.dart
+This file defines the AnswerButton widget, a custom stateless widget designed to display the answer options as buttons. The buttons are styled using the ElevatedButton widget, and they trigger the function to handle answer selection.
 
+#### questions_screen.dart
+questions_screen.dart manages the display of questions and possible answers. It uses a Column widget to organize the question text and the answer buttons vertically. The map function is used with the spread operator to dynamically generate answer buttons.
+
+#### start_screen.dart
+start_screen.dart contains the StartScreen widget, which is the initial screen displayed when the app is launched. It includes a start button that transitions the app to the questions screen.
+
+#### questions_summary/questions_summary.dart
+This file defines the QuestionsSummary widget, which is responsible for summarizing the questions, the correct answers, and the user’s selected answers. It is displayed on the results screen to give users a detailed overview of their performance.
+
+#### questions_summary/question_identifier.dart
+This file contains the QuestionIdentifier widget, which is used to customize the question index displayed on the results screen. The widget styles the index based on whether the user's answer is correct (blue) or incorrect (red).
+
+#### questions_summary/summary_item.dart
+This file defines the SummaryItem widget, which styles each row in the results screen and combines the QuestionIdentifier widget. It checks if the user's answer is correct and applies the appropriate styling.
+
+#### results_screen.dart
+This file defines the ResultsScreen widget, which displays the quiz results after all questions are answered. It shows the number of correct answers and provides a summary of the user's selections. The screen also includes a button to restart the quiz.
+
+#### data/questions.dart
+This file provides the data structure for the questions and answers. It includes a list of question objects, each containing the question text and a list of possible answers, with the correct answer always listed first.
+
+#### models/quiz_questions.dart
+This file /Defines the structure for quiz questions and answers each QuizQuestions object contains:  Question text , List of answers (correct answer first) .It also includes a method to shuffle answers for randomized presentation.
+
+#### pubspec.yaml
+This configuration file lists the project's dependencies, such as flutter, google_fonts, and any assets like images. It ensures all necessary packages are included when the app is built.
 
 
 ## Future Enhancements
@@ -66,33 +98,7 @@ The Quiz App is an interactive mobile application built using Flutter and Dart. 
 - Score Tracking: Implement a feature to track the user's score over multiple quiz attempts.
 - Custom Quizzes: Allow users to create and take custom quizzes by providing their own set of questions and answers.
 
-  ## License
+## License
   This project is licensed under the MIT License. See the LICENSE file for more details.
-
-` main.dart `
-This file serves as the entry point for the Flutter app. It initializes the app using MaterialApp as the root widget and manages the overall navigation between different screens like the start screen, questions screen, and results screen.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
