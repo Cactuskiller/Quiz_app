@@ -34,6 +34,8 @@ The Quiz App is an interactive mobile application built using Flutter and Dart. 
 ##### │   ├──> start_screen.dart          # Initial screen with a start button
 ##### │   ├──> data/
 ##### │   │   └──> questions.dart         # Data source for questions and answers
+##### |   ├──> models/
+##### │   │   └──> quiz_questions.dart
 ##### |   ├──> results screen.dart 
 ##### │   ├──> questions_summary/
 ##### │   │   ├──> questions_summary.dart # Custom widget for summarizing question results
@@ -43,7 +45,32 @@ The Quiz App is an interactive mobile application built using Flutter and Dart. 
 ##### └── pubspec.yaml                   # Configuration file for dependencies and assets
    
 ## Installation and Setup
+1- Clone the repository:
+```git clone https://github.com/yourusername/quiz-app.git```
+```cd quiz-app```
 
+2- Install dependencies:
+``` flutter pub get```
+
+3- Run the application:
+``` flutter run```
+## Code Explanation
+
+
+
+
+
+
+## Future Enhancements
+- Additional Question Types: Incorporate different types of questions, such as multiple-choice or true/false, to make the quiz more versatile.
+- Score Tracking: Implement a feature to track the user's score over multiple quiz attempts.
+- Custom Quizzes: Allow users to create and take custom quizzes by providing their own set of questions and answers.
+
+  ## License
+  This project is licensed under the MIT License. See the LICENSE file for more details.
+
+` main.dart `
+This file serves as the entry point for the Flutter app. It initializes the app using MaterialApp as the root widget and manages the overall navigation between different screens like the start screen, questions screen, and results screen.
 
 
 
