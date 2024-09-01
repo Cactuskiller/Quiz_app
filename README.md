@@ -24,23 +24,23 @@ The Quiz App is an interactive mobile application built using Flutter and Dart. 
 ## Project Structure
 
 ##### quiz_app/
-#####│
-#####├── lib/
-#####│   ├──> main.dart                  # Main entry point of the application
-#####│   ├──> quiz.dart                  # Main widget handling the layout and navigation
-#####│   ├──> answer_button.dart         # Custom widget to style and handle answer buttons
-#####│   ├──> questions_screen.dart      # Screen widget displaying questions and possible answers
-#####│   ├──> results_screen.dart        # Screen widget showing the quiz results
-#####│   ├──> start_screen.dart          # Initial screen with a start button
-#####│   ├──> data/
-#####│   │   └──> questions.dart         # Data source for questions and answers
-#####|   ├──> results screen.dart 
-#####│   ├──> questions_summary/
-#####│   │   ├──> questions_summary.dart # Custom widget for summarizing question results
-#####│   │   ├──> question_identifier.dart # Custom widget for displaying the question index in the 
-#####│   │   └── summary_item.dart       # Custom widget for styling each row in the results screen
-#####│
-#####└── pubspec.yaml                   # Configuration file for dependencies and assets
+##### │
+##### ├── lib/
+##### │   ├──> main.dart                  # Main entry point of the application
+##### │   ├──> quiz.dart                  # Main widget handling the layout and navigation
+##### │   ├──> answer_button.dart         # Custom widget to style and handle answer buttons
+##### │   ├──> questions_screen.dart      # Screen widget displaying questions and possible answers
+##### │   ├──> results_screen.dart        # Screen widget showing the quiz results
+##### │   ├──> start_screen.dart          # Initial screen with a start button
+##### │   ├──> data/
+##### │   │   └──> questions.dart         # Data source for questions and answers
+##### |   ├──> results screen.dart 
+##### │   ├──> questions_summary/
+##### │   │   ├──> questions_summary.dart # Custom widget for summarizing question results
+##### │   │   ├──> question_identifier.dart # Custom widget for displaying the question index in the 
+##### │   │   └── summary_item.dart       # Custom widget for styling each row in the results screen
+##### │
+##### └── pubspec.yaml                   # Configuration file for dependencies and assets
    
 ## Installation and Setup
 
