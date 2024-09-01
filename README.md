@@ -99,5 +99,6 @@ This configuration file lists the project's dependencies, such as flutter, googl
 
 ## License
   This project is licensed under the MIT License. See the LICENSE file for more details.
+  view it here => https://github.com/Cactuskiller/Quiz_app/blob/main/LICENSE
 
 
